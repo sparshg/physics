@@ -151,6 +151,7 @@ class PhysicsActivity(Activity):
         create_toolbar.props.label = _('Create')
         toolbar_box.toolbar.insert(create_toolbar, -1)
         self._insert_create_tools(create_toolbar)
+        create_toolbar.show()
 
         color = ColorToolButton('color')
         color.connect('notify::color', self.__color_notify_cb)
@@ -217,7 +218,6 @@ class PhysicsActivity(Activity):
         activity_button.props.page.insert(load_project, -1)
         load_project.show()
 
-        create_toolbar.set_expanded(True)
         return toolbar_box
 
     def __color_notify_cb(self, button, pdesc):
